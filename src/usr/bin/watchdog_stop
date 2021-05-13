@@ -1,0 +1,13 @@
+#!/bin/sh
+
+GPIO=16
+
+for i in $(seq 1 20);
+do
+	echo 1 >/sys/class/gpio/gpio${GPIO}/value
+	sleep 0.01
+	echo 0 >/sys/class/gpio/gpio${GPIO}/value
+	sleep 0.01
+done
+
+exit 0

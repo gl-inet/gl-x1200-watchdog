@@ -1,0 +1,12 @@
+#!/bin/sh /etc/rc.common
+
+START=10
+
+start(){
+    echo "start watchdog" >>/tmp/x1200_watchdog_init.log
+    /usr/bin/watchdog &
+    /usr/bin/watchdog_start
+	echo "init end" >>/tmp/x1200_watchdog_init.log
+}
+
+
